@@ -9,5 +9,7 @@ namespace RecipeConverterWebApp.Models
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser
     {
+        // User has many Recipes
+        public IList<Recipe> Recipes { get; set; }
     }
 }
