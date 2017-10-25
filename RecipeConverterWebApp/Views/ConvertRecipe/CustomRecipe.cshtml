@@ -1,0 +1,60 @@
+﻿@model RecipeConverterWebApp.ViewModels.ConvertCustomRecipeViewModel
+
+<h1>Recipe Converter</h1>
+
+<div id="CustomRecipeLeft">
+    <form asp-controller="ConvertRecipe" asp-action="CustomRecipe" method="post">
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input class="form-control" asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <input class="form-control" asp-for="Description" />
+            <span asp-validation-for="Description"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="OriginalServeSize"></label>
+            <input class="form-control" asp-for="OriginalServeSize" value="4" />
+            <span asp-validation-for="OriginalServeSize"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DesiredServeSize"></label>
+            <input class="form-control" asp-for="DesiredServeSize" />
+            <span asp-validation-for="DesiredServeSize"></span>
+        </div>
+
+        <br />
+        <p>Ingredients:</p>
+        <br />
+
+        <div id="ingredient-list">
+            <div class="form-group">
+                <label asp-for="Quantity"></label>
+                <input class="form-control" asp-for="Quantity" />
+                <span asp-validation-for="Quantity"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Measurements"></label>
+                <select asp-for="MeasurementID" asp-items="Model.Measurements"></select>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Ingredient"></label>
+                <input class="form-control" asp-for="Ingredient" />
+                <span asp-validation-for="Ingredient"></span>
+            </div>
+        </div>
+
+        <input type="submit" value="Convert Recipe" />
+    </form>
+</div>
+
+<div id="CustomRecipeRight">
+    <textarea readonly placeholder="Recipe conversion will appear here." ></textarea>
+</div>

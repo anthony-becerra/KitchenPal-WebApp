@@ -11,9 +11,10 @@ using System;
 namespace RecipeConverterWebApp.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171024201623_AddMeasurementModel")]
+    partial class AddMeasurementModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -210,7 +211,7 @@ namespace RecipeConverterWebApp.Data.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Measurements");
+                    b.ToTable("Measurement");
                 });
 
             modelBuilder.Entity("RecipeConverterWebApp.Models.Recipe", b =>

@@ -5,14 +5,9 @@ using System.Threading.Tasks;
 
 namespace RecipeConverterWebApp.Models
 {
-    public class Ingredient
+    public class Measurement
     {
         public int ID { get; set; }
-        public int Quantity { get; set; }
-        public Measurement Measurement { get; set; }
         public string Name { get; set; }
-        
-        // An Ingredient has one Recipe
-        public Recipe Recipe { get; set; }
     }
 }

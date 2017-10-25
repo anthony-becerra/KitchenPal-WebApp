@@ -13,6 +13,7 @@ namespace RecipeConverterWebApp.Data
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Ingredient> Ingredients { get; set; }
+        public DbSet<Measurement> Measurements { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
