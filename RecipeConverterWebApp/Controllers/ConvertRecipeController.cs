@@ -41,15 +41,41 @@ namespace RecipeConverterWebApp.Controllers
         {
             if(ModelState.IsValid)
             {
+                // Get Measurement from DB based on ID passed in ViewModel
+                Measurement selectedMeasurement =
+                        context.Measurements.Single(c => c.ID == convertCustomRecipeViewModel.MeasurementID);
+
+                // Create new Recipe to add to DB
+                Recipe newRecipe = new Recipe
+                {
+                    Name = convertCustomRecipeViewModel.Name,
+                    Description = convertCustomRecipeViewModel.Description,
+                    CustomRecipe = true
+                };
+
+                context.Recipes.Add(newRecipe);
+
+                // Create new Ingredient to add to DB
+                Ingredient newIngredient = new Ingredient
+                {
+                    Quantity = convertCustomRecipeViewModel.Quantity,
+                    Measurement = selectedMeasurement,
+                    Name = convertCustomRecipeViewModel.Ingredient,
+                    Recipe = newRecipe
+                };
+
+                context.Ingredients.Add(newIngredient);
+                context.SaveChanges(); // Save adds to DB
+
                 return Redirect("/ConvertRecipe");
             }
-
+            
             List<Measurement> measurements = context.Measurements.ToList();
             ConvertCustomRecipeViewModel ModelError = new ConvertCustomRecipeViewModel(measurements);
             return View(ModelError);
         }
 
-        /* // Used to add measurements to database.
+       /* // Used to add measurements to database.
         public IActionResult AddMeasurements()
         {
             List<string> measurements = new List<string>(new string[] 
@@ -79,7 +105,7 @@ namespace RecipeConverterWebApp.Controllers
             }
 
             return View();
-        }
-        */
+        }*/
+        
     }
 }

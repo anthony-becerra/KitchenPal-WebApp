@@ -2,7 +2,7 @@
 
 <h1>Recipe Converter</h1>
 
-<div id="CustomRecipeLeft">
+<div id="CustomRecipeLeft" class="col-sm-6">
     <form asp-controller="ConvertRecipe" asp-action="CustomRecipe" method="post">
         <div class="form-group">
             <label asp-for="Name"></label>
@@ -55,6 +55,6 @@
     </form>
 </div>
 
-<div id="CustomRecipeRight">
-    <textarea readonly placeholder="Recipe conversion will appear here." ></textarea>
+<div id="CustomRecipeRight" class="col-sm-6">
+    <textarea readonly name="ConvertTextArea" placeholder="Recipe conversion will appear here." ></textarea>
 </div>
