@@ -1,11 +1,10 @@
-﻿<h2>HTML JS Dummy</h2>
-<br /><br />
-<div class="row">
-    <div class="col-sm-6">
+﻿<div class="row">
+    <div class="col-sm-6 col-xs-12 bg-faded p-4 my-4">
+        <h2 class="my-0-t my-4-b">Custom Recipe Converter:</h2>
         <form asp-controller="Form" asp-action="AddForm" id="recipe_form">
-            <input type="text" name="recipe_name" id="recipe_name" placeholder="Name" />
+            <input type="text" name="recipe_name" id="recipe_name" placeholder="Recipe name" />
             <br />
-            <input type="text" name="recipe_desc" id="recipe_desc" placeholder="Desc" />
+            <input type="text" name="recipe_desc" id="recipe_desc" placeholder="Description" />
             <br />
                 
             <label for="origin_ss">Original Serving Size:</label>
@@ -14,18 +13,28 @@
             <input type="number" name="origin_ss" id="origin_ss" min="0" value="0" />
             <input type="number" name="desired_ss" id="desired_ss" min="0" value="0" />
 
-            <hr />
+            <hr class="divider-long"/>
             Ingredients:
             <br />
             <div id="ingredients_list">
                 <div class="ingredient" id="ing_0">
-                    <input type="number" name="qty_0" id="qty_0" min="0" value="0" />
+                    <input type="number" step="any" name="qty_0" id="qty_0" min="0" value="0.0" />
                     <select type="text" name="meas_0" id="meas_0">
-                        <option value="1">lb</option>
-                        <option value="2">oz</option>
-                        <option value="3">ml</option>
+                        <option value="tsp">tsp</option>
+                        <option value="Tbsp">Tbsp</option>
+                        <option value="oz">oz</option>
+                        <option value="lb">lb</option>
+                        <option value="floz">floz</option>
+                        <option value="cup">cup</option>
+                        <option value="pt">pt</option>
+                        <option value="qt">qt</option>
+                        <option value="gal">gal</option>
+                        <option value="mL">mL</option>
+                        <option value="L">L</option>
+                        <option value="each">each</option>
                     </select>
                     <input type="text" name="ing_0" id="ing_0" placeholder="ingredient name" />
+                    
                 </div>
             </div>
             <br />
@@ -34,6 +43,6 @@
         </form>
     </div>
 
-    <div class="col-sm-6" id="recipe_result">
+    <div class="col-sm-6 col-xs-12 bg-faded p-4 my-4" id="recipe_result">
     </div>
 </div>

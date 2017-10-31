@@ -24,19 +24,11 @@ namespace RecipeConverterWebApp.Controllers
 
             foreach(KeyValuePair<string, Dictionary<string,string>> ingredient in recipe.Ingredients)
             {
-                /*foreach(KeyValuePair<string, string> ing_content in */
                 if(ingredient.Value.ContainsKey("quantity"))
                 {
                     double quantity = double.Parse(ingredient.Value["quantity"]);
                     quantity *= Convert_ratio;
                     ingredient.Value["quantity"] = quantity.ToString();
-                    //if (ing_content.Key.Equals("quantity"))
-                    //{
-                    //    int quantity = int.Parse(ing_content.Value);
-                    //    quantity *= Convert_ratio;
-                    //    KeyValuePair<string, string> newKVP = new KeyValuePair<string, string>("quantity", quantity.ToString());
-                    //    ing_content = newKVP;
-                    //}
                 }
             }
             

@@ -61,25 +61,27 @@ $(document).ready(function () {
                     
                     <h1>Recipe Name: ${result.name}</h1>
                     <h3>Recipe Description: ${result.desc}</h3>
-                    <hr>
+                    <hr class="divider">
                     <h4>Original Serving Size: ${result.origin_ss} | Desired Serving Size: ${result.desired_ss}</h4>
-                    <hr>
+                    <hr class="divider">
+                    <ul>
                 `);
 
-                let i = 1;
+                //let i = 1;
 
                 for (let ing in result.ingredients) {
                     let detail = result.ingredients[ing];
-
-                    $('#recipe_result').append(`<p>${i}: ${parseFloat(detail.quantity).toFixed(2)} ${detail.measurement} ${detail.ingredient}</p>`);
-                    $('#recipe_result').append(`<br>`);
-                    i++;
+                    
+                    $('#recipe_result').append(`<li>${parseFloat(detail.quantity).toFixed(2)} ${detail.measurement} ${detail.ingredient}</li>`);
                 };
+
+                $('#recipe_result').append(`</ul>`);
+                
             }
         });
     });
 
-
+    
     // console.log(newRecipe); // verification
 
 
