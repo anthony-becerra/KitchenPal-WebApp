@@ -85,6 +85,15 @@ hr.divider-long {
     font-weight: 500;
 }
 
+.navbar-inverse .btn-link{
+    color: #fff;
+}
+
+.navbar-inverse .btn-link:hover {
+    color: #bf1515;
+    font-weight: 500;
+}
+
 #footer-text{
     color: #fff;
 }

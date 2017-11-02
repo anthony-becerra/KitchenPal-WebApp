@@ -4,6 +4,7 @@
 
 $(document).ready(function () {
 
+    $("#recipe_result:empty").parent().hide();
 
     const Rform = $('#recipe_form'); // get the form with id "recipe_form"
     let i = 1;
@@ -53,16 +54,15 @@ $(document).ready(function () {
             url: "/Form/AddForm",
             type: "POST",
             data: newRecipe,
-            // 
             success: function (result) {
                 console.log(result);
 
                 $('#recipe_result').html(`
                     
-                    <h1>Recipe Name: ${result.name}</h1>
-                    <h3>Recipe Description: ${result.desc}</h3>
+                    <h1 class="text-center">Recipe Name: ${result.name}</h1>
+                    <h3 class="text-center">Recipe Description: ${result.desc}</h3>
                     <hr class="divider">
-                    <h4>Original Serving Size: ${result.origin_ss} | Desired Serving Size: ${result.desired_ss}</h4>
+                    <h4 class="text-center">Original Serving Size: ${result.origin_ss} | Desired Serving Size: ${result.desired_ss}</h4>
                     <hr class="divider">
                     <ul>
                 `);

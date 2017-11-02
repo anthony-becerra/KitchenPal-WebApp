@@ -1,5 +1,5 @@
 ﻿<div class="row">
-    <div class="col-sm-6 col-xs-12 bg-faded p-4 my-4">
+    <div class="col-sm-5 col-xs-12 bg-faded p-4 my-4">
         <h2 class="my-0-t my-4-b">Custom Recipe Converter:</h2>
         <form asp-controller="Form" asp-action="AddForm" id="recipe_form">
             <input type="text" name="recipe_name" id="recipe_name" placeholder="Recipe name" />
@@ -43,6 +43,8 @@
         </form>
     </div>
 
-    <div class="col-sm-6 col-xs-12 bg-faded p-4 my-4" id="recipe_result">
+    <div class="col-sm-6 col-sm-offset-1 col-xs-12 bg-faded p-4 my-4">
+        <div id="recipe_result">
+        </div>
     </div>
 </div>
